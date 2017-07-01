@@ -1,0 +1,85 @@
+<div class="container">
+<div class="row" id="home">
+
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                            <div class="description">
+                                <h2 class="h2-responsive">Sign up right now! </h2>
+                                <hr class="hr-dark">
+                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae, quisquam iste, maiores. Nulla.</p>
+                                <br>
+                                <a class="btn btn-comm btn-lg waves-effect waves-light">Learn more</a>
+                            </div>
+                        </div>
+
+
+                        <!--Second column-->
+                        <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+                            <!--Form-->
+                            <div class="card">
+                                <div class="card-block">
+                                    <!--Header-->
+                                    <div class="text-xs-center">
+                                        <h3><i class="fa fa-user"></i> Register with:</h3>
+                                         <%= link_to "Facebookログイン", user_facebook_omniauth_authorize_path, class:" btn-lg btn-fb waves-effect waves-light" %>
+                                       <!--  <a href="https://twitter.com/MDBootstrap" target="_blank" class="btn-floating btn-small btn-tw waves-effect waves-light"><i class="fa fa-twitter"> </i></a> -->
+                                        
+                                        <hr>
+                                        <h3>or:</h3>
+                                    </div>
+                                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                                     <%= render 'partial/deviseErrorMsg' %> 
+
+
+                                    <!--Body-->
+                                    <div class="md-form">
+                                        <i class="fa fa-envelope prefix"></i>
+                                          
+                                         <%= f.label :email %><br />
+                                         <%= f.email_field :email, :class => 'form-control', autofocus: true %>
+   
+                                    </div>
+
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix"></i>
+                                        
+                                            <%= f.label :password %>
+                                            
+                                            
+                                            <% if @minimum_password_length %>
+                                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                                            <% end %><br>
+                                            <%= f.password_field :password, :class => 'form-control', autocomplete: "off" %>
+                                          
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix"></i>
+                                       
+                                            <%= f.label :password_confirmation %><br />
+                                            <%= f.password_field :password_confirmation, :class => 'form-control', autocomplete: "off" %>
+                                          <
+                                    </div>
+
+
+
+                                    <div class="text-xs-center">
+                                        <%= f.submit "Sign up", :class => 'btn btn-comm btn-lg waves-effect waves-light' %>
+                                        
+                                        <!-- <fieldset class="form-group">
+                                            <input type="checkbox" id="checkbox1">
+                                            <label for="checkbox1">Subscribe me to the newsletter</label>
+                                        </fieldset> -->
+                                    </div>
+                                      
+                                    <% end %>
+
+                                    <div class="text-xs-center">
+                                    <%= render "devise/shared/links" %>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.Form-->
+                        </div>
+                        <!--/Second column-->
+</div>
+
+</div>
