@@ -39,14 +39,15 @@ gem "figaro", "~> 1.1.0"
 
 gem 'devise'
 
+group :development, :test do 
+  gem 'sqlite3'
+end
 
 group :production do 
   gem 'pg','~> 0.15'
 end
 
-group :development, :test do 
-  gem 'sqlite3'
-end
+
 
 
 group :development, :test do
