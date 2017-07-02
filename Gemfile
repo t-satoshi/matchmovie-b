@@ -46,7 +46,8 @@ group :production do
 end
 
 group :development, :test do 
-  gem 'sqlite3'
+  gem 'sqlite3', groups: %w(test development), require: false
+  gem 'pg', groups: %w(production), require: false
 end
 
 group :development, :test do
