@@ -26,8 +26,9 @@ html,body{
      padding-bottom:10px; /*フッターの高さと同じ*/
 }
 footer{
-    
      position:absolute;
+     bottom: 0;
+     width: 100%;
   }
 .white {
     background-color: rgba(169, 156, 156, 0)!important;
@@ -91,14 +92,15 @@ header .device-container {
     max-width: 300px;
     margin: 0 auto 100px;
 }
+header {
+  height: 100vh;
+}
 
 .footer,
 .push {
   height: 50px;
 }
-footer{
-    width: 100%;
-}
+
 /*
 sign up
 //////////////////////////////////////////////////////*/
